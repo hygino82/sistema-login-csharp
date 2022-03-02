@@ -47,7 +47,19 @@ namespace SistemaLogin
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-          
+            if (checkBox1.Checked)
+            {
+                txtSenha.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtSenha.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+            txtSenha.UseSystemPasswordChar = true;
         }
     }
 }
