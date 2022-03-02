@@ -19,12 +19,27 @@ namespace SistemaLogin
 
         private void btnSenha_Click(object sender, EventArgs e)
         {
+            string senha = txtSenha.Text;
+            string nome = txtUsuario.Text;
+            if (CadastroUsuario.Login(nome, senha))
+            {
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Acesso Negado");
+                txtSenha.Text = "";
+                txtUsuario.Text = "";
+                txtUsuario.Focus();
+                Close();
+            }
+
 
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }
