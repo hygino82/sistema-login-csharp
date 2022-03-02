@@ -12,6 +12,8 @@ namespace SistemaLogin
 {
     public partial class FormLogin : Form
     {
+        public static bool Cancelar = false;
+
         public FormLogin()
         {
             InitializeComponent();
@@ -39,7 +41,13 @@ namespace SistemaLogin
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Cancelar = true;
+            Close();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+          
         }
     }
 }
